@@ -1039,3 +1039,13 @@ tbody tr:hover { background: rgba(34,26,53,.5); }
   accent-color: var(--amber);
   cursor: pointer;
 }
+.back-to-site {
+  display: block;
+  text-align: center;
+  color: var(--muted);
+  font-size: .88rem;
+  margin-top: -14px;
+  margin-bottom: 22px;
+  transition: color .2s var(--ease);
+}
+.back-to-site:hover { color: var(--amber); }

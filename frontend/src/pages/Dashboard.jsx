@@ -4,6 +4,7 @@ import Leads from '../components/Leads';
 import Tasks from '../components/Tasks';
 import CalendarView from '../components/CalendarView';
 import TeamManage from '../components/TeamManage';
+import ChangePassword from '../components/ChangePassword';
 
 export default function Dashboard() {
   const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -18,6 +19,7 @@ export default function Dashboard() {
         <Link to="tasks">Tasks</Link>
         <Link to="calendar">Calendar</Link>
         {user.role === 'admin' && <Link to="team">Team</Link>}
+        <Link to="settings">Change password</Link>
         <button onClick={logout}>Log out</button>
       </aside>
       <main>
@@ -26,6 +28,7 @@ export default function Dashboard() {
           <Route path="tasks" element={<Tasks />} />
           <Route path="calendar" element={<CalendarView />} />
           {user.role === 'admin' && <Route path="team" element={<TeamManage />} />}
+          <Route path="settings" element={<ChangePassword />} />
         </Routes>
       </main>
     </div>

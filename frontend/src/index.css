@@ -1015,3 +1015,27 @@ tbody tr:hover { background: rgba(34,26,53,.5); }
 }
 .task-status-overdue .task-due { color: #FF7A7A; font-weight: 500; }
 .task-status-soon .task-due { color: #FFD23F; font-weight: 500; }
+/* Calendar row: info left, done toggle right, bigger checkbox */
+.calendar li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.event-info { flex: 1; min-width: 200px; }
+.event-done-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .9rem;
+  color: var(--muted);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.event-done-toggle input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--amber);
+  cursor: pointer;
+}

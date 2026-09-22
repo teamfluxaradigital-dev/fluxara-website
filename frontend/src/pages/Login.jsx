@@ -39,6 +39,7 @@ export default function Login() {
         <img src={logo} alt="Fluxara" />
         <h2>Team login</h2>
         <p className="sub">Sign in to see leads, tasks and the calendar.</p>
+        <a href="/" className="back-to-site">← Back to website</a>
         <form onSubmit={submit}>
           <input required placeholder="Email" autoComplete="username"
             value={email} onChange={(e) => setEmail(e.target.value)} />

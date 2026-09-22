@@ -6,7 +6,16 @@ const connectDB = require('./db');
 const app = express();
 app.use(cors());
 app.use(express.json());
-connectDB();
+connectDB().then(async () => {
+  const bcrypt = require('bcryptjs');
+  const User = require('./models/User');
+  const exists = await User.findOne({ email: process.env.ADMIN_EMAIL });
+  if (!exists) {
+    const password = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
+    await User.create({ name: 'Admin', email: process.env.ADMIN_EMAIL, password, role: 'admin' });
+    console.log('Admin account created:', process.env.ADMIN_EMAIL);
+  }
+});
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/leads', require('./routes/leads'));

@@ -993,3 +993,25 @@ tbody tr:hover { background: rgba(34,26,53,.5); }
   flex-shrink: 0;
   overflow: hidden;
 }
+/* Task status colors by due date */
+.task-status-done {
+  border-left: 3px solid #4ADE80;
+  background: rgba(74, 222, 128, .06);
+}
+.task-status-overdue {
+  border-left: 3px solid #FF5C5C;
+  background: rgba(255, 92, 92, .07);
+}
+.task-status-soon {
+  border-left: 3px solid #FFD23F;
+  background: rgba(255, 210, 63, .07);
+}
+.task-status-normal { border-left: 3px solid transparent; }
+
+.task-due {
+  margin-left: 10px;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.task-status-overdue .task-due { color: #FF7A7A; font-weight: 500; }
+.task-status-soon .task-due { color: #FFD23F; font-weight: 500; }
